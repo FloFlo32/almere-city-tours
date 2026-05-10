@@ -1,0 +1,47 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --orange: #E07B2A;
+  --orange-dark: #c4611a;
+  --dark: #1a1a1a;
+}
+
+@layer base {
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply text-gray-700 antialiased;
+    font-family: 'Outfit', 'Segoe UI', system-ui, sans-serif;
+  }
+
+  h1, h2, h3, h4 {
+    @apply font-bold;
+  }
+}
+
+@layer components {
+  .btn-orange {
+    @apply bg-[#E07B2A] text-white font-semibold px-6 py-3 rounded transition-all duration-200 hover:bg-[#c4611a] inline-block;
+  }
+
+  .btn-orange-outline {
+    @apply border-2 border-white text-white font-semibold px-6 py-3 rounded transition-all duration-200 hover:bg-white hover:text-gray-900 inline-block;
+  }
+
+  .nav-link {
+    @apply text-gray-700 font-medium hover:text-[#E07B2A] transition-colors duration-150 relative pb-1;
+  }
+
+  .nav-link.active {
+    @apply text-[#E07B2A];
+  }
+
+  .nav-link.active::after {
+    content: '';
+    @apply absolute bottom-0 left-0 right-0 h-0.5 bg-[#E07B2A];
+  }
+}
